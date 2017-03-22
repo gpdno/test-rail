@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @project.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @project.description %>
+</p>
+
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Action #</th>
+        <th>Action</th>
+        <th>Priority</th>
+        <th>Owner</th>
+        <th>Status</th>
+        <th>Comments</th>
+      </tr>
+    </thead>
+    <tbody>
+     <% @activities.each do |activity| %>
+        <tr>
+          <td><%= activity.id %></td>
+          <td><%= activity.action %></td>
+          <td><%= activity.priority %></td>
+          <td><%= activity.owner %></td>
+          <td><%= activity.status %></td>
+          <td><%= activity.comment %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+  
+
+
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
